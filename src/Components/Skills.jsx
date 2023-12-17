@@ -25,8 +25,8 @@ const Skills = () => {
       id="skills"
       class="bg-gradient-to-b from-white to-blue-200   h-[100vh] flex flex-col justify-center items-center"
     >
-      <h1>Peek Into My</h1>
-      <h1 className="pb-5 font-semibold py-2">Skills</h1>
+      <h1 className="text-black">Peek Into My</h1>
+      <h1 className="pb-5 font-semibold py-2 text-black">Skills</h1>
       <Msg message="Swipe up 👆" />
       <div className="h-96 carousel carousel-vertical rounded-box">
         <div className="flex flex-col carousel-item h-ful items-center justify-center rounded-xl bg-gradient-to-br from-pink-300 via-pink-500 to-pink-700 w-[300px] h-[400px]">

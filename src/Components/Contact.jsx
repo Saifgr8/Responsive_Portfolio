@@ -10,8 +10,8 @@ const Contact = () => {
       id="contact"
       class="bg-gradient-to-b from-blue-200 to-white   h-[100vh] flex flex-col justify-center items-center"
     >
-      <h1>Get In Touch</h1>
-      <h1 className="font-semibold py-2">Contact Me</h1>
+      <h1 className="text-black">Get In Touch</h1>
+      <h1 className="font-semibold py-2 text-black">Contact Me</h1>
       <Msg message="Gateway to my DMs 🫠, just kidding; we are very professional here 🤫." />
 
       <div className="flex lg:flex-row flex-col items-center justify-center ">
