@@ -62,12 +62,12 @@ const Navbar = () => {
             fontFamily: "cursive",
             backgroundImage: "linear-gradient(90deg, black, blue)",
             WebkitBackgroundClip: "text",
-            color: "transparent",
+            color: "black",
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
             // Responsive styles
             "@media screen and (max-width: 600px)": {
-              fontSize: "1.2rem",
               backgroundImage: "linear-gradient(90deg, black, blue)",
+              color: "black",
             },
           }}
         >

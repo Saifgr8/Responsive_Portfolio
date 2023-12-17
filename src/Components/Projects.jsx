@@ -19,7 +19,10 @@ import saif from '../Components/images/SAIF.png'
 
 const Projects = () => {
   return (
-    <div  id="projects" class="bg-gradient-to-b from-blue-200 to-white  h-[200vh] sm:h-[100vh] md:h-[200vh] lg:h-[100vh] xl:h-[100vh flex flex-col justify-center items-center">
+    <div
+      id="projects"
+      class="bg-gradient-to-b from-blue-200 to-white  h-[200vh] sm:h-[100vh] md:h-[200vh] lg:h-[100vh] xl:h-[100vh flex flex-col justify-center items-center"
+    >
       <h1>Browse My Recent</h1>
       <h1 className="font-semibold py-2">Projects</h1>
       <Msg message="Demos at your service 😉" />
@@ -29,14 +32,14 @@ const Projects = () => {
             <img src={KYF} alt="KYF" />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Know Your Food</h2>
+            <h2 className="card-title ">Know Your Food</h2>
             <p>
               A full stack web deployed app contributing to the health and
               fitness industry. Users can browse among 1000s of food items, set
               goal, create recipes and track progess.
             </p>
             <span>Tech used: </span>
-            <div className="flex flex-wrap items-center justify-center space-x-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 space-x-4">
               <img
                 className="h-8 sm:h-8 md:h-9 lg:h-10 xl:h-11"
                 alt="React"
@@ -115,7 +118,7 @@ const Projects = () => {
               and RTK, Caching api, Debouncing, Nested Comments and API Polling.
             </p>
             <span>Tech used: </span>
-            <div className="flex flex-wrap items-center justify-center space-x-4">
+            <div className="flex flex-wrap items-center justify-center  gap-4  space-x-4">
               <img
                 className="h-8 sm:h-8 md:h-9 lg:h-10 xl:h-11"
                 alt="React"
@@ -171,7 +174,7 @@ const Projects = () => {
               player, providing a magical twist.
             </p>
             <span>Tech used: </span>
-            <div className="flex flex-wrap items-center justify-center space-x-4">
+            <div className="flex flex-wrap items-center justify-center   gap-4 space-x-4">
               <img
                 className="h-8 sm:h-8 md:h-9 lg:h-10 xl:h-11"
                 alt="JavaScript"

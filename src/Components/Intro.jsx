@@ -59,18 +59,21 @@ const IntroContent = () => {
         }}
       />
       <div>
-        <Typography variant="body2" className="sm:text-sm lg:text-lg">
+        <Typography
+          variant="body2"
+          className="sm:text-sm lg:text-lg text-black"
+        >
           Hello I'm
         </Typography>
         <Typography
           sx={{ fontFamily: "cursive" }}
           variant="h5"
-          className="sm:text-xs lg:text-3xl"
+          className="sm:text-xs lg:text-3xl  text-black"
         >
           Mohammad Saifuddin
         </Typography>
-        <Typography>A Web Developer.</Typography>
-        <Typography sx={{ fontFamily: "cursive" }}>
+        <Typography className=" text-black">A Web Developer.</Typography>
+        <Typography sx={{ fontFamily: "cursive", color: 'black' }}>
           Coz, Style is what I live by{" "}
           <span
             style={{

@@ -21,14 +21,19 @@ import { Msg } from "./Projects";
 
 const Skills = () => {
   return (
-    <div id="skills" class="bg-gradient-to-b from-white to-blue-200   h-[100vh] flex flex-col justify-center items-center">
+    <div
+      id="skills"
+      class="bg-gradient-to-b from-white to-blue-200   h-[100vh] flex flex-col justify-center items-center"
+    >
       <h1>Peek Into My</h1>
       <h1 className="pb-5 font-semibold py-2">Skills</h1>
       <Msg message="Swipe up 👆" />
       <div className="h-96 carousel carousel-vertical rounded-box">
         <div className="flex flex-col carousel-item h-ful items-center justify-center rounded-xl bg-gradient-to-br from-pink-300 via-pink-500 to-pink-700 w-[300px] h-[400px]">
-          <h1 className="pb-10 font-semibold">Front End</h1>
-          <div className="flex flex-wrap items-center justify-evenly space-x-4 ">
+          <h1 className="pb-10 font-semibold text-black ">
+            Front End Development
+          </h1>
+          <div className="flex flex-wrap items-center gap-2 justify-evenly space-x-4 ">
             <img
               className="h-12 sm:h-12 md:h-12 lg:h-10 xl:h-11 mx-3 my-3"
               alt="React"
@@ -72,8 +77,10 @@ const Skills = () => {
           </div>
         </div>
         <div className="flex flex-col carousel-item h-ful items-center justify-center rounded-xl bg-gradient-to-br from-orange-300 via-orange-500 to-orange-700 w-[300px] h-[400px]">
-          <h1 className="pb-10 font-semibold">Back End</h1>
-          <div className="flex flex-wrap items-center justify-evenly space-x-4 ">
+          <h1 className="pb-10 font-semibold text-black ">
+            Back End Development
+          </h1>
+          <div className="flex flex-wrap items-center  gap-2 justify-evenly space-x-4 ">
             <img
               className="h-12 sm:h-12 md:h-12 lg:h-10 xl:h-11 mx-3 my-3"
               alt="React"
@@ -107,8 +114,8 @@ const Skills = () => {
           </div>
         </div>
         <div className="flex flex-col carousel-item h-ful items-center justify-center rounded-xl bg-gradient-to-br from-teal-300 via-teal-500 to-teal-700 w-[300px] h-[400px]">
-          <h1 className="pb-10 font-semibold">MISCELLANEOUS</h1>
-          <div className="flex flex-wrap items-center justify-evenly space-x-4 ">
+          <h1 className="pb-10 font-semibold text-black ">MISCELLANEOUS</h1>
+          <div className="flex flex-wrap items-center  gap-2 justify-evenly space-x-4 ">
             <img
               className="h-12 sm:h-12 md:h-12 lg:h-10 xl:h-11 mx-3 my-3"
               alt="React"
