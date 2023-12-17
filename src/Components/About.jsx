@@ -9,17 +9,17 @@ const About = () => {
   return (
     <div id="about" class="bg-gradient-to-b from-white to-blue-200 h-[100vh] flex flex-col justify-center items-center">
       <h1>Get To Know Me More</h1>
-      <h1 className="font-semibold">About Me</h1>
+      <h1 className="font-semibold py-2">About Me</h1>
       <Msg message="Swipe right 👉" />
       <div className="carousel carousel-center max-w-sm p-4 space-x-4 bg-base rounded-box">
         <div className="carousel-item">
           <div className="flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-blue-300 via-blue-500 to-blue-700 w-[300px] h-[400px]">
-            <Typography sx={{ textAlign: "center", fontSize: "2em" }}>
+            <Typography sx={{ textAlign: "center", fontSize: "2em", color: 'black' }}>
               Summary
             </Typography>
             <img src={goal} alt="goal" className="h-10 w-10" />
             <br />
-            <Typography sx={{ padding: "0 5px", textAlign: "justify" }}>
+            <Typography sx={{ padding: "0 15px", textAlign: "justify" }}>
               Recent MSc in Computer Science from a top Uni with industry
               experience in Front End, Back End Development and CI/CD with
               proven skills in React.js, Node.js, JavaScript, database

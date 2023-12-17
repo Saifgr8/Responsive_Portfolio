@@ -21,7 +21,7 @@ const Projects = () => {
   return (
     <div  id="projects" class="bg-gradient-to-b from-blue-200 to-white  h-[200vh] sm:h-[100vh] md:h-[200vh] lg:h-[100vh] xl:h-[100vh flex flex-col justify-center items-center">
       <h1>Browse My Recent</h1>
-      <h1 className="font-semibold">Projects</h1>
+      <h1 className="font-semibold py-2">Projects</h1>
       <Msg message="Demos at your service 😉" />
       <div className="flex flex-wrap gap-6 justify-center md:justify-evenly lg:justify-center xl:justify-around">
         <div className="card w-96 bg-base-100 shadow-xl image-full">
