@@ -17,6 +17,7 @@ import saas from "../Components/images/SASS.png";
 import node from "../Components/images/nodejs.png";
 import sql from "../Components/images/sql-server.png";
 import xml from "../Components/images/xml.png";
+import express from "../Components/images/express.png";
 import { Msg } from "./Projects";
 
 const Skills = () => {
@@ -85,6 +86,11 @@ const Skills = () => {
               className="h-12 sm:h-12 md:h-12 lg:h-10 xl:h-11 mx-3 my-3"
               alt="React"
               src={node}
+            ></img>
+            <img
+              className="h-12 sm:h-12 md:h-12 lg:h-10 xl:h-11 mx-3 my-3"
+              alt="React"
+              src={express}
             ></img>
             <img
               className="h-12 sm:h-8 md:h-12 lg:h-12 xl:h-11 mx-3 my-3"

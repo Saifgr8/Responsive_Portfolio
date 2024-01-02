@@ -5,13 +5,14 @@ import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import ProjectNew from "./Components/ProjectNew";
 
 function App() {
   return (
     <div className="App">
       <Intro />
       <About />
-      <Projects />
+      <ProjectNew />
       <Skills />
       <Contact />
       <Footer/>

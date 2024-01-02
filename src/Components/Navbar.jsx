@@ -37,13 +37,26 @@ const Navbar = () => {
                 <a>Projects</a>
                 <ul className="p-2">
                   <li>
-                    <a>Know Your Food</a>
+                    <a>
+                      Know Your Food
+                      <div className="badge  badge-primary">1</div>
+                    </a>
                   </li>
                   <li>
-                    <a>YouTube Clone</a>
+                    <a>
+                      Custom Cards <div className="badge  badge-primary">2</div>
+                    </a>
                   </li>
                   <li>
-                    <a>Wizard Pool</a>
+                    <a>
+                      YouTube Clone{" "}
+                      <div className="badge  badge-primary">3</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      Wizard Pool <div className="badge  badge-primary">4</div>
+                    </a>
                   </li>
                 </ul>
               </li>
