@@ -49,7 +49,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <a>
-                      YouTube Clone{" "}
+                      YouTube Clone
                       <div className="badge  badge-primary">3</div>
                     </a>
                   </li>
@@ -98,20 +98,29 @@ const Navbar = () => {
           <li>
             <details>
               <summary>Projects</summary>
-              <ul>
+              <ul className="w-48">
                 <li>
                   <Link to="projects" spy={true} smooth={true} duration={500}>
                     <a>Know Your Food</a>
+                    <div className="badge  badge-primary">1</div>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="projects" spy={true} smooth={true} duration={500}>
+                    <a>Custom Cards</a>
+                    <div className="badge  badge-primary">2</div>
                   </Link>
                 </li>
                 <li>
                   <Link to="projects" spy={true} smooth={true} duration={500}>
                     <a>YouTube Clone</a>
+                    <div className="badge  badge-primary">3</div>
                   </Link>
                 </li>
                 <li>
                   <Link to="projects" spy={true} smooth={true} duration={500}>
                     <a>Wizard pool</a>
+                    <div className="badge  badge-primary">4</div>
                   </Link>
                 </li>
               </ul>
