@@ -45,7 +45,7 @@ const SkillsNew = () => {
   return (
     <div
       id="skills"
-      className="h-[300vh] xl:h-[100vh] bg-gradient-to-b from-white to-blue-200  pt-12"
+      className="h-[280vh] xl:h-[100vh] bg-gradient-to-b from-white to-blue-200  pt-12"
     >
       <div className="flex flex-col items-center">
         <h1 className="text-black">Peek Into My</h1>
