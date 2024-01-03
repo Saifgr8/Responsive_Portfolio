@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      class="bg-gradient-to-b from-blue-200 to-white   h-[100vh] flex flex-col justify-center items-center"
+      class="bg-gradient-to-b from-blue-200 to-white  py-32 flex flex-col justify-center items-center"
     >
       <h1 className="text-black">Get In Touch</h1>
       <h1 className="font-semibold py-2 text-black">Contact Me</h1>
