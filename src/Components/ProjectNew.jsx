@@ -151,7 +151,7 @@ const ProjectNew = () => {
         </div>
 
         <div className="bg-slate-200  rounded-lg py-2">
-          <h1 className="mx-2 px-2 text-center ">
+          <h1 className="mx-2 px-2 text-center text-black">
             {projectData[currentIndex]?.desc}
           </h1>
         </div>
