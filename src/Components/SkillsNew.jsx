@@ -52,11 +52,11 @@ const SkillsNew = () => {
         <h1 className="pb-5 font-semibold py-2 text-black">Skills</h1>
         <Msg message="Peekabo 😉" />
       </div>
-      <div className="flex justify-around items-center flex-wrap">
+      <div className="flex justify-evenly items-center  flex-wrap">
         {skillData.map((item, index) => {
           return (
             <div key={index} className="flex flex-col justify-center">
-              <Lottie animationData={item?.gif} className="h-80 w-80" />
+              <Lottie animationData={item?.gif} className="h-80 w-80  ml-10" />
               <h1 className=" text-sm pl-7 rounded-lg relative text-center text-black">
                 <span className="bg-gradient-to-r from-white to-blue-200 bg-opacity-50 p-1 rounded text-xl ">
                   {item?.title}
