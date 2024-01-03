@@ -1,19 +1,18 @@
 import React from "react";
 import Navbar from "./Navbar";
-import {  Typography, Dialog, DialogContent } from "@mui/material";
+import { Typography, Dialog, DialogContent } from "@mui/material";
 import saif from "../Components/images/SAIF.png";
 import CVF from "../Components/images/CVFNEW.png";
 import CVB from "../Components/images/cvbNEW.png";
 import { useState } from "react";
 import { Msg } from "./Projects";
+import Lottie from "lottie-react";
+import intro from "../Videos/blue.json";
 
 const Intro = () => {
   return (
     <div class="bg-gradient-to-b from-blue-200 h-[100vh] to-white ">
       <Navbar />
-      <div className=" absolute mt-20">
-        <Msg message="Welcome 😁" />
-      </div>
       <div className="flex  justify-center ">
         <IntroContent />
       </div>
@@ -58,12 +57,14 @@ const IntroContent = () => {
             "translateX(-1rem)";
         }}
       />
+
       <div>
         <Typography
           variant="body2"
-          className="sm:text-sm lg:text-lg text-black"
+          className="sm:text-sm lg:text-lg text-black "
         >
-          Hello I'm
+          <Lottie animationData={intro} className="h-16" />
+          I'm
         </Typography>
         <Typography
           sx={{ fontFamily: "cursive" }}
@@ -72,18 +73,10 @@ const IntroContent = () => {
         >
           Mohammad Saifuddin
         </Typography>
-        <Typography className=" text-black">A Web Developer.</Typography>
-        <Typography sx={{ fontFamily: "cursive", color: 'black' }}>
-          Coz, Style is what I live by{" "}
-          <span
-            style={{
-              display: "inline-block",
-              fontSize: "1.5em", // Adjust the size as needed
-            }}
-          >
-            ✨
-          </span>
+        <Typography className=" text-black">
+          A Software Developer with eye-catching code and personality ✨
         </Typography>
+
         <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
           <button
             onClick={() => handleOpen()}
