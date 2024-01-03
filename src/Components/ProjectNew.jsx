@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Msg } from "./Projects";
 import kyfVideo from "../Videos/kyfcompressed.mp4";
-import cardsVideo from "../Videos/ccCardscompressed.mov";
-import YTVideo from "../Videos/YTCOMPREED.mp4";
+import cardsVideo from "../Videos/CCOMP2.mp4";
+import YTVideo from "../Videos/YTC.mp4";
 import Wdpool from "../Videos/WDCOMPRESSED.mp4";
 import Js from "../Components/images/js-file.png";
 import html from "../Components/images/html5.png";
