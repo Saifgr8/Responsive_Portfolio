@@ -63,7 +63,7 @@ const IntroContent = () => {
           variant="body2"
           className="sm:text-sm lg:text-lg text-black "
         >
-          <Lottie animationData={intro} className="h-16" />
+          <Lottie animationData={intro} className="h-16 xl:mr-64" />
           I'm
         </Typography>
         <Typography

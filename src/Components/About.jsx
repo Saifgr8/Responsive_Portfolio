@@ -29,9 +29,8 @@ const About = () => {
             >
               Recent MSc in Computer Science from a top Uni with industry
               experience in Front End, Back End Development and CI/CD with
-              proven skills in React.js, Node.js, JavaScript, database
-              management and Microsoft Azure DevOps. Seeking a challenging {""}
-              <span className="font-bold  text-black">
+              proven skills in React.js, Node.js, JavaScript, DBMS and Microsoft Azure DevOps. Seeking a challenging {""}
+              <span className="font-extrabold  text-black">
                 Software Development
               </span>{" "}
               role. Eager to contribute to dynamic teams and drive impactful
