@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import { Typography, Dialog, DialogContent } from "@mui/material";
 import saif from "../Components/images/SAIF.png";
@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Msg } from "./Projects";
 import Lottie from "lottie-react";
 import intro from "../Videos/blue.json";
+import { TypeAnimation } from "react-type-animation";
 
 const Intro = () => {
   return (
@@ -22,6 +23,8 @@ const Intro = () => {
 
 const IntroContent = () => {
   const [showCV, SetShowCV] = useState(false);
+
+
   const handleOpen = () => {
     SetShowCV(true);
   };
@@ -74,7 +77,24 @@ const IntroContent = () => {
           Mohammad Saifuddin
         </Typography>
         <Typography className=" text-black">
-          A Software Developer with eye-catching code and personality ✨
+          A
+          <div className="inline px-2">
+            <TypeAnimation
+              sequence={[
+                "Software Developer",
+                1000,
+                "Software Engineer",
+                1000,
+                "Web Developer",
+                1000,
+              ]}
+              wrapper="span"
+              speed={20}
+              style={{ fontFamily: "monospace", fontSize: "1.3em" }}
+              repeat={Infinity}
+            />
+          </div>
+          <div className="block">with eye-catching code and personality ✨</div>
         </Typography>
 
         <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
