@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { Link } from "react-scroll";
+import VisitCounter from "./VisitCounter";
 
 const Navbar = () => {
   return (
@@ -133,12 +134,15 @@ const Navbar = () => {
           </Link>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end flex flex-col items-end pr-2">
         <Link to="contact" spy={true} smooth={true} duration={500}>
           <a className="inline-block px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow-md hover:shadow-white ">
             Contact
           </a>
         </Link>
+        <div className="py-1">
+          <VisitCounter />
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Msg } from "./Projects";
-import kyfVideo from "../Videos/kyfcompressed.mp4";
-import cardsVideo from "../Videos/CCOMP2.mp4";
-import YTVideo from "../Videos/YTC.mp4";
-import Wdpool from "../Videos/WDCOMPRESSED.mp4";
+
 import Js from "../Components/images/js-file.png";
 import html from "../Components/images/html5.png";
 import css from "../Components/images/css-3.png";
@@ -22,7 +19,6 @@ import node from "../Components/images/nodejs.png";
 const ProjectNew = () => {
   const projectData = [
     {
-      video: kyfVideo,
       title: "Know-Your-Food",
       tech: [
         Js,
@@ -42,7 +38,6 @@ const ProjectNew = () => {
       desc: "A full stack web deployed app contributing to the health and fitness industry. Users can browse among 1000s of food items, set goal, create recipes and track progress",
     },
     {
-      video: cardsVideo,
       title: "Custom Cards",
       tech: [Js, Reactimg, Postman, node, express, html, css, Azure, github],
       demoLink: "https://mern-custcards.azurewebsites.net/",
@@ -50,7 +45,6 @@ const ProjectNew = () => {
       desc: "A full MERN(MongoDB, Expressjs, Reactjs and Nodejs) stack website created for adding a personal touch to your boring bank cards, pay off in style next time.",
     },
     {
-      video: YTVideo,
       title: "YouTube_Clone",
       tech: [Js, Reactimg, html, css, Azure, github],
       demoLink: "https://saifyt.azurewebsites.net/",
@@ -58,7 +52,6 @@ const ProjectNew = () => {
       desc: "Created a fully functional clone of YouTube from scratch. Implemented industry-standard practices like API Management, Redux and RTK, Caching api, Debouncing, Nested Comments and API Polling.",
     },
     {
-      video: Wdpool,
       title: "Wizard Pool",
       tech: [Java, proc, github],
       demoLink: "https://www.youtube.com/watch?v=MSVUIefDKOQ",
@@ -86,7 +79,7 @@ const ProjectNew = () => {
   return (
     <div
       id="projects"
-      className="xl:h-[120vh]  bg-gradient-to-b from-blue-200 to-white"
+      className="xl:h-[100vh]  bg-gradient-to-b from-blue-200 to-white pt-6"
     >
       <div className="flex flex-col items-center">
         <h1 className="text-black">Browse My Recent</h1>
@@ -95,31 +88,58 @@ const ProjectNew = () => {
       </div>
 
       <div className="flex flex-col gap-1 justify-center items-center">
-        <h1 className="text-3xl font-bold mb-4  text-blue-800">
+        <h1 className="text-xl font-bold mb-4  text-blue-800">
           {projectData[currentIndex]?.title}
         </h1>
         {currentIndex === 0 && (
-          <video className="rounded-xl" width="650px" height="350px" controls>
-            <source src={kyfVideo} type="video/mp4" />
-          </video>
+          <iframe
+            className="rounded-lg"
+            width="400"
+            height="250"
+            src="https://www.youtube.com/embed/KcXTxtHXmxU?si=Ef8Cyo85ZCTFCsCh"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         )}
         {currentIndex === 1 && (
-          <video className="rounded-xl" width="650px" height="350px" controls>
-            <source src={cardsVideo} type="video/mp4" />
-          </video>
+          <iframe
+            className="rounded-lg"
+            width="400"
+            height="250"
+            src="https://www.youtube.com/embed/B-pHRn0Jf1w?si=AwfjJxU2eBrI82hY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         )}
         {currentIndex === 2 && (
-          <video className="rounded-xl" width="650px" height="350px" controls>
-            <source src={YTVideo} type="video/mp4" />
-          </video>
+          <iframe
+            className="rounded-lg"
+            width="400"
+            height="250"
+            src="https://www.youtube.com/embed/9mDOnct9JZI?si=77MM6uqZmTxJ-vEj"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         )}
         {currentIndex === 3 && (
-          <video className="rounded-xl" width="650px" height="350px" controls>
-            <source src={Wdpool} type="video/mp4" />
-          </video>
+          <iframe
+            className="rounded-lg"
+            width="400"
+            height="250"
+            src="https://www.youtube.com/embed/F4Xr86BlDuc?si=G3H43VXdW-yHBsDn"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         )}
         <div>
-          <h1 className="text-center py-2 text-2xl font-bold mb-4 text-blue-800">
+          <h1 className="text-center py-1 text-xl font-bold mb-4 text-blue-800">
             Tech stack:
           </h1>
           <div className="flex flex-wrap justify-center gap-2">
@@ -135,7 +155,7 @@ const ProjectNew = () => {
             })}
           </div>
         </div>
-        <div className="flex gap-10 my-2">
+        <div className="flex gap-10 my-4">
           <button
             onClick={handleDemoLink}
             className=" active:bg-blue-800 active:text-white  cursor-pointer bg-gradient-to-b from-blue-400 to-white py-2 px-3 rounded-lg"
