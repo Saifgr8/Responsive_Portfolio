@@ -38,14 +38,14 @@ const ProjectNew = () => {
       desc: "A full stack web deployed app contributing to the health and fitness industry. Users can browse among 1000s of food items, set goal, create recipes and track progress",
     },
     {
-      title: "Custom Cards",
+      title: "Card Customizer",
       tech: [Js, Reactimg, Postman, node, express, html, css, Azure, github],
       demoLink: "https://mern-custcards.azurewebsites.net/",
       gitLink: "https://github.com/Saifgr8/CCfrontEnd",
       desc: "A full MERN(MongoDB, Expressjs, Reactjs and Nodejs) stack website created for adding a personal touch to your boring bank cards, pay off in style next time.",
     },
     {
-      title: "YouTube_Clone",
+      title: "YouTube Clone",
       tech: [Js, Reactimg, html, css, Azure, github],
       demoLink: "https://saifyt.azurewebsites.net/",
       gitLink: "https://github.com/Saifgr8/Saif_YT",
@@ -158,13 +158,13 @@ const ProjectNew = () => {
         <div className="flex gap-10 my-4">
           <button
             onClick={handleDemoLink}
-            className=" active:bg-blue-800 active:text-white  cursor-pointer bg-gradient-to-b from-blue-400 to-white py-2 px-3 rounded-lg"
+            className=" active:bg-blue-800 active:text-white  text-black cursor-pointer bg-gradient-to-b from-blue-400 via-blue-300 to-white py-2 px-3 rounded-lg"
           >
             Demo
           </button>
           <button
             onClick={handleGitLink}
-            className=" active:bg-blue-800 active:text-white  cursor-pointer bg-gradient-to-b from-blue-400 to-white py-2 px-3 rounded-lg"
+            className=" active:bg-blue-800 active:text-white text-black cursor-pointer bg-gradient-to-b from-blue-400 via-blue-300 to-white py-2 px-3 rounded-lg"
           >
             Git
           </button>
@@ -179,27 +179,27 @@ const ProjectNew = () => {
       <div className=" flex justify-center gap-6 mt-5">
         <button
           onClick={() => setCurrentIndex(0)}
-          className=" active:bg-blue-800 active:text-white  cursor-pointer bg-gradient-to-b from-white to-blue-400 py-2 px-3 rounded-lg"
+          className=" active:bg-blue-800 active:text-white  cursor-pointer  text-black bg-gradient-to-b from-white via-blue-300 to-blue-400 py-2 px-3 rounded-lg"
         >
-          KYF
+          <span className="text-black">KYF</span>
         </button>
         <button
           onClick={() => setCurrentIndex(1)}
-          className=" active:bg-blue-800 active:text-white  cursor-pointer bg-gradient-to-b from-white to-blue-400 py-2 px-3 rounded-lg"
+          className=" active:bg-blue-800 active:text-white  cursor-pointer  text-black bg-gradient-to-b from-white via-blue-300 to-blue-400 py-2 px-3 rounded-lg"
         >
-          CCards
+          <span className="text-black">CCards</span>
         </button>
         <button
           onClick={() => setCurrentIndex(2)}
-          className=" active:bg-blue-800 active:text-white  cursor-pointer bg-gradient-to-b from-white to-blue-400 py-2 px-3 rounded-lg"
+          className=" active:bg-blue-800 active:text-white  cursor-pointer  text-black bg-gradient-to-b from-white via-blue-300 to-blue-400 py-2 px-3 rounded-lg"
         >
-          YT_Clone
+          <span className="text-black">YouTube</span>
         </button>
         <button
           onClick={() => setCurrentIndex(3)}
-          className=" active:bg-blue-800 active:text-white  cursor-pointer bg-gradient-to-b from-white to-blue-400  py-2 px-3 rounded-lg"
+          className=" active:bg-blue-800 active:text-white  text-black cursor-pointer bg-gradient-to-b from-white via-blue-300 to-blue-400  py-2 px-3 rounded-lg"
         >
-          Wizard Pool
+          <span className="text-black">Wizard Pool</span>
         </button>
       </div>
     </div>

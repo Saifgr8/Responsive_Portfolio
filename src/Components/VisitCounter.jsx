@@ -87,9 +87,9 @@ const VisitCounter = () => {
     }, [db]);
 
   return (
-    <div className="flex">
+    <div className="flex ">
       Profile Visits:
-      <span className="text-lg ">{count ? (<div>{count} 🤩</div>) : <Ping />}</span>
+      <span className="text">{count ? (<div className="px-1">{count} 🤩</div>) : <Ping />}</span>
     </div>
   );
 };
