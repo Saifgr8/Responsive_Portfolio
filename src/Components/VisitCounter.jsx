@@ -6,7 +6,11 @@ import {
   setDoc,
   updateDoc,
   increment,
+  query,
+  where,
+  getDocs,
 } from "firebase/firestore";
+
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -25,31 +29,52 @@ const db = getFirestore(app);
 const VisitCounter = () => {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    const incrementCount = async () => {
-      const counterRef = doc(db, "counters", "visits");
+    useEffect(() => {
+      const fetchIPAndIncrementCount = async () => {
+        try {
+          // Get user's IP address from ipify
+          const { ip } = await fetch("https://api.ipify.org?format=json").then(
+            (response) => response.json()
+          );
 
-      try {
-        const docSnapshot = await getDoc(counterRef);
+          const userId = `${ip}-unique-id`;
+          const userRef = doc(db, "users", userId);
 
-        if (docSnapshot.exists()) {
-          const currentCount = docSnapshot.data().count;
-          setCount(currentCount);
-        } else {
-          // Create the counter if it doesn't exist
-          await setDoc(counterRef, { count: 0 });
+          // Check if the user exists in Firestore
+          const userDoc = await getDoc(userRef);
+
+          if (!userDoc.exists()) {
+            // If user doesn't exist, create the user
+            await setDoc(userRef, { id: userId, visited: true });
+
+            // Update the count in Firestore
+            const counterRef = doc(db, "counters", "visits");
+            const docSnapshot = await getDoc(counterRef);
+
+            if (docSnapshot.exists()) {
+              const currentCount = docSnapshot.data().count;
+              setCount(currentCount);
+            } else {
+              // Create the counter if it doesn't exist
+              await setDoc(counterRef, { count: 0 });
+            }
+
+            // Increment the count
+            await updateDoc(counterRef, { count: increment(1) });
+            setCount((prevCount) => prevCount + 1);
+          } else {
+            // If user has already visited, fetch the latest count
+            const docSnapshot = await getDoc(doc(db, "counters", "visits"));
+            const currentCount = docSnapshot.data().count;
+            setCount(currentCount);
+          }
+        } catch (error) {
+          console.error("Error updating visit counter:", error);
         }
+      };
 
-        // Increment the count
-        await updateDoc(counterRef, { count: increment(1) });
-        setCount((prevCount) => prevCount + 1);
-      } catch (error) {
-        console.error("Error updating visit counter:", error);
-      }
-    };
-
-    incrementCount();
-  }, [db]);
+      fetchIPAndIncrementCount();
+    }, [db]);
 
   return (
     <div>
