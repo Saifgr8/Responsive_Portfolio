@@ -26,6 +26,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const Ping = () => {
+  return (
+      <div className="flex space-x-2 mt-3 pl-3">
+        <div className="w-1 h-1 bg-gray-600 rounded-full animate-ping"></div>
+        <div className="w-1 h-1 bg-gray-600 rounded-full animate-ping"></div>
+        <div className="w-1 h-1 bg-gray-600 rounded-full animate-ping"></div>
+      </div>
+  );
+}
+
 const VisitCounter = () => {
   const [count, setCount] = useState(0);
 
@@ -77,8 +87,9 @@ const VisitCounter = () => {
     }, [db]);
 
   return (
-    <div>
-      Profile Visits: <span className="text-lg ">{count} 🤩</span>
+    <div className="flex">
+      Profile Visits:
+      <span className="text-lg ">{count ? (<div>{count} 🤩</div>) : <Ping />}</span>
     </div>
   );
 };
