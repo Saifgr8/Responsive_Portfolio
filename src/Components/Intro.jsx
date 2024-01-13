@@ -13,7 +13,7 @@ import { TypeAnimation } from "react-type-animation";
 const Intro = () => {
   return (
     <div class="bg-gradient-to-b from-blue-200 h-[90vh] to-white ">
-      <Navbar />
+     
       <div className="flex  justify-center ">
         <IntroContent />
       </div>
@@ -32,10 +32,6 @@ const IntroContent = () => {
     SetShowCV(false);
   };
   return (
-    <div className="flex flex-col items-center">
-      <div className="absolute">
-        <Lottie animationData={intro} className="h-60 w-60" />
-      </div>
       <div
         style={{
           display: "flex",
@@ -137,7 +133,6 @@ const IntroContent = () => {
           </DialogContent>
         </Dialog>
       </div>
-    </div>
   );
 };
 

@@ -1,11 +1,10 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { Link } from "react-scroll";
-import VisitCounter from "./VisitCounter";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-gradient-to-r from-slate-100 to-blue-200 rounded-b-2xl shadow-md">
+    <div className="navbar bg-gradient-to-r from-slate-100 to-blue-200 rounded-bl-2xl shadow-md">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -140,9 +139,6 @@ const Navbar = () => {
             Contact
           </a>
         </Link>
-        <div className="py-1">
-          <VisitCounter />
-        </div>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import {
   where,
   getDocs,
 } from "firebase/firestore";
+import './curve.css'
 
 import { initializeApp } from "firebase/app";
 
@@ -28,68 +29,83 @@ const db = getFirestore(app);
 
 const Ping = () => {
   return (
-      <div className="flex space-x-2 mt-3 pl-3">
-        <div className="w-1 h-1 bg-gray-600 rounded-full animate-ping"></div>
-        <div className="w-1 h-1 bg-gray-600 rounded-full animate-ping"></div>
-        <div className="w-1 h-1 bg-gray-600 rounded-full animate-ping"></div>
-      </div>
+    <div className="flex space-x-2 mt-5 pl-3">
+      <div className="w-2 h-2 bg-gray-600 rounded-full animate-ping"></div>
+      <div className="w-2 h-2 bg-gray-600 rounded-full animate-ping"></div>
+      <div className="w-2 h-2 bg-gray-600 rounded-full animate-ping"></div>
+      <div className="w-2 h-2 bg-gray-600 rounded-full animate-ping"></div>
+    </div>
   );
-}
+};
 
 const VisitCounter = () => {
   const [count, setCount] = useState(0);
 
-    useEffect(() => {
-      const fetchIPAndIncrementCount = async () => {
-        try {
-          // Get user's IP address from ipify
-          const { ip } = await fetch("https://api.ipify.org?format=json").then(
-            (response) => response.json()
-          );
+  useEffect(() => {
+    const fetchIPAndIncrementCount = async () => {
+      try {
+        // Get user's IP address from ipify
+        const { ip } = await fetch("https://api.ipify.org?format=json").then(
+          (response) => response.json()
+        );
 
-          const userId = `${ip}-unique-id`;
-          const userRef = doc(db, "users", userId);
+        const userId = `${ip}-unique-id`;
+        const userRef = doc(db, "users", userId);
 
-          // Check if the user exists in Firestore
-          const userDoc = await getDoc(userRef);
+        // Check if the user exists in Firestore
+        const userDoc = await getDoc(userRef);
 
-          if (!userDoc.exists()) {
-            // If user doesn't exist, create the user
-            await setDoc(userRef, { id: userId, visited: true });
+        if (!userDoc.exists()) {
+          // If user doesn't exist, create the user
+          await setDoc(userRef, { id: userId, visited: true });
 
-            // Update the count in Firestore
-            const counterRef = doc(db, "counters", "visits");
-            const docSnapshot = await getDoc(counterRef);
+          // Update the count in Firestore
+          const counterRef = doc(db, "counters", "visits");
+          const docSnapshot = await getDoc(counterRef);
 
-            if (docSnapshot.exists()) {
-              const currentCount = docSnapshot.data().count;
-              setCount(currentCount);
-            } else {
-              // Create the counter if it doesn't exist
-              await setDoc(counterRef, { count: 0 });
-            }
-
-            // Increment the count
-            await updateDoc(counterRef, { count: increment(1) });
-            setCount((prevCount) => prevCount + 1);
-          } else {
-            // If user has already visited, fetch the latest count
-            const docSnapshot = await getDoc(doc(db, "counters", "visits"));
+          if (docSnapshot.exists()) {
             const currentCount = docSnapshot.data().count;
             setCount(currentCount);
+          } else {
+            // Create the counter if it doesn't exist
+            await setDoc(counterRef, { count: 0 });
           }
-        } catch (error) {
-          console.error("Error updating visit counter:", error);
-        }
-      };
 
-      fetchIPAndIncrementCount();
-    }, [db]);
+          // Increment the count
+          await updateDoc(counterRef, { count: increment(1) });
+          setCount((prevCount) => prevCount + 1);
+        } else {
+          // If user has already visited, fetch the latest count
+          const docSnapshot = await getDoc(doc(db, "counters", "visits"));
+          const currentCount = docSnapshot.data().count;
+          setCount(currentCount);
+        }
+      } catch (error) {
+        console.error("Error updating visit counter:", error);
+      }
+    };
+
+    fetchIPAndIncrementCount();
+  }, [db]);
 
   return (
-    <div className="flex ">
-      Profile Visits:
-      <span className="text">{count ? (<div className="px-1">{count} 🤩</div>) : <Ping />}</span>
+    <div className="flex pt-10 relative flex-col items-center justify-center bg-gradient-to-b from-blue-100 to-blue-200 p-4 rounded-t-full ">
+      <span style={{ fontFamily: "monospace", fontSize: "2em" }}>
+        Profile Visits 🤩
+      </span>
+      <span
+        style={{ fontFamily: "monospace", position: "relative" }}
+        className="text-7xl p-2 text-blue-500"
+      >
+        {count ? (
+          <>
+            <div className="txt">{count}</div>
+            
+          </>
+        ) : (
+          <Ping />
+        )}
+      </span>
     </div>
   );
 };

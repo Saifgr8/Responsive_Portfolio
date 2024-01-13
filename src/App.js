@@ -7,8 +7,11 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import ProjectNew from "./Components/ProjectNew";
 import SkillsNew from "./Components/SkillsNew";
-import { initializeApp } from "firebase/app";import "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
+import Navbar from "./Components/Navbar";
+import PreIntro from "./Components/PreIntro";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMiI-11_jVL4Ynvw5ySns4B-klFZsNmVE",
@@ -21,11 +24,13 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const fireStore = getFirestore(app)
+const fireStore = getFirestore(app);
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
+      <PreIntro />
       <Intro />
       <About />
       <ProjectNew />
