@@ -10,7 +10,7 @@ import {
   where,
   getDocs,
 } from "firebase/firestore";
-import './curve.css'
+import "./curve.css";
 
 import { initializeApp } from "firebase/app";
 
@@ -41,52 +41,60 @@ const Ping = () => {
 const VisitCounter = () => {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    const fetchIPAndIncrementCount = async () => {
-      try {
-        // Get user's IP address from ipify
-        const { ip } = await fetch("https://api.ipify.org?format=json").then(
-          (response) => response.json()
-        );
+ useEffect(() => {
+   const fetchIPAndIncrementCount = async () => {
+     try {
+       // Get user's IP address from ipify
+       const { ip } = await fetch("https://api.ipify.org?format=json").then(
+         (response) => response.json()
+       );
 
-        const userId = `${ip}-unique-id`;
-        const userRef = doc(db, "users", userId);
+       const currentDate = new Date().toLocaleDateString("en-US", {
+         weekday: "short",
+         year: "numeric",
+         month: "short",
+         day: "numeric",
+       });
 
-        // Check if the user exists in Firestore
-        const userDoc = await getDoc(userRef);
+       const compoundKey = `${currentDate}-${ip}`;
+       const userRef = doc(db, "users", compoundKey);
 
-        if (!userDoc.exists()) {
-          // If user doesn't exist, create the user
-          await setDoc(userRef, { id: userId, visited: true });
+       // Check if the user exists in Firestore
+       const userDoc = await getDoc(userRef);
 
-          // Update the count in Firestore
-          const counterRef = doc(db, "counters", "visits");
-          const docSnapshot = await getDoc(counterRef);
+       if (!userDoc.exists()) {
+         // If user doesn't exist, create the user with the current date and IP address
+         await setDoc(userRef, { date: compoundKey, ip, visited: true });
 
-          if (docSnapshot.exists()) {
-            const currentCount = docSnapshot.data().count;
-            setCount(currentCount);
-          } else {
-            // Create the counter if it doesn't exist
-            await setDoc(counterRef, { count: 0 });
-          }
+         // Update the count in Firestore
+         const counterRef = doc(db, "counters", "visits");
+         const docSnapshot = await getDoc(counterRef);
 
-          // Increment the count
-          await updateDoc(counterRef, { count: increment(1) });
-          setCount((prevCount) => prevCount + 1);
-        } else {
-          // If user has already visited, fetch the latest count
-          const docSnapshot = await getDoc(doc(db, "counters", "visits"));
-          const currentCount = docSnapshot.data().count;
-          setCount(currentCount);
-        }
-      } catch (error) {
-        console.error("Error updating visit counter:", error);
-      }
-    };
+         if (docSnapshot.exists()) {
+           const currentCount = docSnapshot.data().count;
+           setCount(currentCount);
+         } else {
+           // Create the counter if it doesn't exist
+           await setDoc(counterRef, { count: 0 });
+         }
 
-    fetchIPAndIncrementCount();
-  }, [db]);
+         // Increment the count
+         await updateDoc(counterRef, { count: increment(1) });
+         setCount((prevCount) => prevCount + 1);
+       } else {
+         // If the user has already visited, fetch the latest count
+         const docSnapshot = await getDoc(doc(db, "counters", "visits"));
+         const currentCount = docSnapshot.data().count;
+         setCount(currentCount);
+       }
+     } catch (error) {
+       console.error("Error updating visit counter:", error);
+     }
+   };
+
+   fetchIPAndIncrementCount();
+ }, [db]);
+
 
   return (
     <div className="flex pt-10 relative flex-col items-center justify-center bg-gradient-to-b from-blue-100 to-blue-200 p-4 rounded-t-full ">
@@ -100,7 +108,6 @@ const VisitCounter = () => {
         {count ? (
           <>
             <div className="txt">{count}</div>
-            
           </>
         ) : (
           <Ping />
