@@ -14,13 +14,14 @@ import Navbar from "./Components/Navbar";
 import PreIntro from "./Components/PreIntro";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDMiI-11_jVL4Ynvw5ySns4B-klFZsNmVE",
-  authDomain: "portfolio-3e526.firebaseapp.com",
-  projectId: "portfolio-3e526",
-  storageBucket: "portfolio-3e526.appspot.com",
-  messagingSenderId: "818505789727",
-  appId: "1:818505789727:web:8705b2a62ca646887cc02a",
-  measurementId: "G-PBSSFR3KSK",
+  apiKey: "AIzaSyCIu8UlSWTk4Zueyre0BGsEza5WNx8tUq8",
+  authDomain: "counter-e6b18.firebaseapp.com",
+  databaseURL: "https://counter-e6b18-default-rtdb.firebaseio.com",
+  projectId: "counter-e6b18",
+  storageBucket: "counter-e6b18.appspot.com",
+  messagingSenderId: "506634694300",
+  appId: "1:506634694300:web:6ed03d38c561d9c9f14759",
+  measurementId: "G-JEVPX7M9FJ",
 };
 
 const app = initializeApp(firebaseConfig);

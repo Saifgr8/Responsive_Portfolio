@@ -98,7 +98,7 @@ const Navbar = () => {
           <li>
             <details>
               <summary>Projects</summary>
-              <ul className="w-48">
+              <ul className="w-48 z-40">
                 <li>
                   <Link to="projects" spy={true} smooth={true} duration={500}>
                     <a>Know Your Food</a>
